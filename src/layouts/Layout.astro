@@ -34,7 +34,7 @@
 		background-color: var(--background-color);
 		color: var(--text-color);
 		font-family: var(--font-family);
-		padding: 50px 32px;
+		padding: 16px;
 	}
 
 	/* Base typography settings */
@@ -51,5 +51,11 @@
 	a {
 		color: var(--text-color);
 		text-decoration: none;
+	}
+
+	@media (max-width: 768px) {
+		html,body {
+			padding: 8px;
+		}
 	}
 </style>

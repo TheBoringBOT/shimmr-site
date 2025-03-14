@@ -21,5 +21,33 @@ const { Content } = await entry.render();
 ---
 
 <LegalLayout frontmatter={entry.data}>
+  <div class="legal-title-container">
+    <h1 class="legal-title">{entry.data.title}</h1>
+    <span class="legal-updated">Updated: {entry.data.lastUpdated}</span>
+    <div class="title-underline"></div>
+  </div>
   <Content />
 </LegalLayout>
+
+<style>
+  .legal-title-container {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .legal-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-updated {
+    font-size: 0.8rem;
+  }
+  .title-underline {
+    height: 1px;
+    width: 100%;
+    background-color: #cccccc;
+    margin: 2rem auto 2rem auto;
+  }
+</style>

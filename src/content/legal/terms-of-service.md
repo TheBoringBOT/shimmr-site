@@ -3,10 +3,6 @@ title: 'Terms of Service for Shimmr'
 lastUpdated: '2025-03-14'
 ---
 
-# Terms of Service for Shimmr
-
-**Last Updated:** March 14, 2025
-
 These Terms of Use ("Terms") govern your use of the Shimmr app ("App" or "Service"). By using Shimmr, you agree to these Terms. If you do not agree, please do not use the App.
 
 ## 1. Eligibility & Use

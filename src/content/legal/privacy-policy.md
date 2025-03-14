@@ -3,10 +3,6 @@ title: 'Privacy Policy for Shimmr'
 lastUpdated: '2025-03-14'
 ---
 
-# Privacy Policy for Shimmr
-
-**Last Updated:** 2025-03-14
-
 ## We Don't Store Your Personal Data
 
 Our app does not collect, store, or share any of your personal data. All data is stored locally on your device, and we have no access to it.

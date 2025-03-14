@@ -7,7 +7,7 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   adapter: cloudflare({
     platformProxy: {
-      enabled: true
-    }
-  })
+      enabled: true,
+    },
+  }),
 });

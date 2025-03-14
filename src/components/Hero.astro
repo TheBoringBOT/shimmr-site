@@ -5,19 +5,33 @@ import download from '../assets/download.svg';
 <section class="hero-container">
   <div class="blur-layer"></div>
   <div class="hero-content">
-    <a class="logo" href="https://apps.apple.com/us/app/shimmr-meditation-sleep/id6479964631?itscg=30200&itsct=apps_box_artwork&mttnsubad=6479964631">
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c6/02/f4/c602f423-680c-e10c-d402-ffa399002e04/AppIcon-0-1x_U007ephone-0-1-85-220-0.jpeg/540x540bb.jpg" 
-           alt="Shimmr: Meditation & Sleep" />
+    <a
+      class="logo"
+      href="https://apps.apple.com/us/app/shimmr-meditation-sleep/id6479964631?itscg=30200&itsct=apps_box_artwork&mttnsubad=6479964631"
+      aria-label="Shimmr App"
+    >
+      <img
+        src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c6/02/f4/c602f423-680c-e10c-d402-ffa399002e04/AppIcon-0-1x_U007ephone-0-1-85-220-0.jpeg/540x540bb.jpg"
+        alt="Shimmr: Meditation & Sleep"
+      />
     </a>
 
     <div class="content">
       <h1>Discover Your Inner Calm</h1>
-      <p>A beautifully crafted experience designed to enhance sleep, reduce stress, and elevate focus through immersive soundscapes.</p>
-      
+      <p>
+        A beautifully crafted experience designed to enhance sleep, reduce stress, and elevate focus
+        through immersive soundscapes.
+      </p>
+
       <div class="download-options">
-        <a href="https://apps.apple.com/us/app/shimmr-meditation-sleep/id6479964631?itscg=30200&itsct=apps_box_badge&mttnsubad=6479964631">
-          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1721865600" 
-               alt="Download on the App Store" />
+        <a
+          href="https://apps.apple.com/us/app/shimmr-meditation-sleep/id6479964631?itscg=30200&itsct=apps_box_badge&mttnsubad=6479964631"
+          aria-label="Download on the App Store"
+        >
+          <img
+            src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1721865600"
+            alt="Download on the App Store"
+          />
         </a>
       </div>
     </div>
@@ -26,18 +40,16 @@ import download from '../assets/download.svg';
 
 <style>
   .hero-container {
-    margin: 0 auto;
-    border-radius: 2rem;
-    font-family: inherit;
+    font-family:
+      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
-    min-height: 600px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.519) 0%, rgba(22, 22, 22, 0.387) 100%), url(https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    background: linear-gradient(158deg, rgb(39 39 39), rgb(0 0 0));
+    position: fixed;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
   }
 
   .blur-layer {
@@ -46,10 +58,10 @@ import download from '../assets/download.svg';
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(30px);
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 0;
-    border-radius:2rem;
   }
 
   .hero-content {
@@ -59,59 +71,105 @@ import download from '../assets/download.svg';
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 1rem;
     z-index: 1;
+    margin: 0 auto;
+    height: min-content;
+    width: inherit;
+  }
+
+  .logo {
+    margin-bottom: 2.5rem;
   }
 
   .logo img {
-    max-width: 150px;
-    border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    width: 180px;
+    height: 180px;
+    border-radius: 36px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .logo img:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
   }
 
   .content {
-    max-width: 600px;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
   }
 
   h1 {
     font-size: 3rem;
-    font-weight: 700;
-    color: white;
-    margin: 0;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
   p {
-    font-size: 1.2rem;
-    color: #b3b3b3;
-    font-weight: 300;
-    margin: 12px 0 24px;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    margin: 0 0 2.5rem;
+    line-height: 1.5;
+    max-width: 580px;
+  }
+
+  .download-options {
+    margin-top: 0.5rem;
   }
 
   .download-options img {
-    width: 180px;
+    width: 200px;
     transition: transform 0.2s ease;
   }
 
-  .download-options img:hover {
-    transform: scale(1.05);
+  @media (max-width: 768px) {
+    .logo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 28px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      margin-bottom: 1.5rem;
+    }
   }
 
-  @media (max-width: 768px) {
-
-    .hero-container {
-padding: 8px;
-
+  @media (max-width: 480px) {
+    .logo img {
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
     }
+
     h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
+
     p {
       font-size: 1rem;
+    }
+
+    .download-options img {
+      width: 180px;
     }
   }
 </style>

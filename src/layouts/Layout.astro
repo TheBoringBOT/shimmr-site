@@ -4,58 +4,62 @@
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Shimmr App</title>
-		<!-- Import Inter font from Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Shimmr App</title>
+    <!-- Import Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	:root {
-		--background-color: #000000;
-		--text-color: #ffffff;
-		--secondary-text-color: #b3b3b3;
-		--font-family: 'Inter', sans-serif;
-	}
+  :root {
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --secondary-text-color: #b3b3b3;
+    --font-family: 'Inter', sans-serif;
+  }
 
-	html,
-	body {
-		margin: 0;
-		background-color: var(--background-color);
-		color: var(--text-color);
-		font-family: var(--font-family);
-		padding: 16px;
-	}
+  html,
+  body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+  }
 
-	/* Base typography settings */
-	h1, h2, h3, h4, h5, h6 {
-		font-family: var(--font-family);
-		font-weight: 700;
-		margin-top: 0;
-	}
+  /* Base typography settings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family);
+    font-weight: 700;
+    margin-top: 0;
+  }
 
-	p, a, li, span {
-		font-family: var(--font-family);
-	}
+  p,
+  a,
+  li,
+  span {
+    font-family: var(--font-family);
+  }
 
-	a {
-		color: var(--text-color);
-		text-decoration: none;
-	}
-
-	@media (max-width: 768px) {
-		html,body {
-			padding: 8px;
-		}
-	}
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
 </style>

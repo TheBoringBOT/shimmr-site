@@ -1,4 +1,5 @@
 ---
+import Layout from './Layout.astro';
 import type { LegalFrontmatter } from '../types/legal';
 
 interface Props {
@@ -8,25 +9,28 @@ interface Props {
 const { frontmatter } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{frontmatter.title}</title>
-  </head>
-  <body>
-    <div class="legal-container">
-      <slot />
-    </div>
-  </body>
-</html>
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description || `Legal document: ${frontmatter.title}`}
+>
+  <div class="legal-container">
+    <slot />
+  </div>
+</Layout>
 
 <style>
+  /* Override global background color */
+  :global(html),
+  :global(body) {
+    background-color: #ffffff;
+  }
+
   .legal-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 8px;
+    padding: 40px 16px;
     color: #1d1d1f;
+    background-color: #ffffff;
     font-family:
       system-ui,
       -apple-system,

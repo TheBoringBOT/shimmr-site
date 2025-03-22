@@ -22,7 +22,7 @@ const { frontmatter } = Astro.props;
   /* Override global background color */
   :global(html),
   :global(body) {
-    background-color: #ffffff;
+    background-color: #ffffff !important;
   }
 
   .legal-container {
@@ -30,13 +30,16 @@ const { frontmatter } = Astro.props;
     margin: 0 auto;
     padding: 40px 16px;
     color: #1d1d1f;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
     font-family:
       system-ui,
       -apple-system,
       sans-serif;
   }
 
+  :global(a) {
+    color: blue !important;
+  }
   :global(h1) {
     font-size: 2.5rem;
     margin-bottom: 1rem;

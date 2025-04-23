@@ -1,0 +1,90 @@
+html,
+body {
+  background-color: #0c0c0d;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.aboutContainer {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0rem 2rem;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.sectionHeading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid #2d2d3a;
+  padding-bottom: 0.75rem;
+}
+
+.content {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #b2b2bf;
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+}
+
+.emailLink {
+  color: #0071e3;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.2s ease;
+}
+
+.emailLink:hover {
+  border-bottom-color: #0071e3;
+}
+
+@media (max-width: 768px) {
+  .aboutContainer {
+    padding: 1rem 1.5rem 4rem;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionHeading {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .content {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutContainer {
+    padding: 3rem 1rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .sectionHeading {
+    font-size: 1.3rem;
+    margin-top: 1.75rem;
+  }
+}

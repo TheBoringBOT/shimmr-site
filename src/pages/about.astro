@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import styles from '../styles/about.module.css';
+---
+
+<Layout title="About Shimmr" description="Learn more about Shimmr and our mission.">
+  <div class={styles.aboutContainer}>
+    <div class={styles.content}>
+      <h2 class={styles.sectionHeading}>Our Story</h2>
+      <p>
+        Shimmr was created by an audio engineer and software developer who shared a vision: to build
+        a beautiful, high-quality sound experience that supports real mental and emotional benefits.
+        The name Shimmr comes from the idea of shimmering — the subtle, glowing feeling often
+        experienced in deep meditation or moments of calm clarity. That sensation became the
+        foundation for what the app aims to deliver through sound.
+      </p>
+      <p>
+        Built in Stockholm, Sweden, Shimmr combines Scandinavian design principles of simplicity and
+        functionality with cutting-edge audio technology to create an experience that's both
+        beautiful and effective.
+      </p>
+
+      <h2 class={styles.sectionHeading}>Our Approach</h2>
+      <p>
+        Every element in Shimmr — from the layered tones to the minimal design — was crafted from
+        the ground up. The audio is based on research-backed frequencies and sound therapy
+        principles, combining binaural beats, isochronic tones, ambient textures, and nature
+        soundscapes to support sleep, reduce stress, improve focus, and deepen meditation.
+      </p>
+
+      <h2 class={styles.sectionHeading}>Our Vision</h2>
+      <p>
+        The long-term goal is to continue evolving Shimmr into the most versatile and customizable
+        sound-based wellness platform — one that remains simple to use, beautiful to experience, and
+        powerful enough to support real change in your daily life.
+      </p>
+
+      <h2 class={styles.sectionHeading}>Get In Touch</h2>
+      <p>
+        We'd love to hear from you! Reach out to us at <a
+          href="mailto:hi@shimmr.app"
+          class={styles.emailLink}>hi@shimmr.app</a
+        > with any suggestions, feature requests, or just to say hi.
+      </p>
+    </div>
+  </div>
+</Layout>

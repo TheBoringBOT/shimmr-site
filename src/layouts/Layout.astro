@@ -9,7 +9,7 @@ export interface Props {
 
 const {
   title = 'Shimmr App',
-  description = 'Your default description here',
+  description = 'Shimmr is a sound therapy app that uses binaural beats and isochronic tones to help you relax, focus, and sleep better.',
   image = '/default-og-image.jpg',
   canonical = Astro.url.href,
 } = Astro.props;
@@ -19,7 +19,10 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <!-- favicon -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

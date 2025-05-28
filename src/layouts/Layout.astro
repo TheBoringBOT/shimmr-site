@@ -60,7 +60,23 @@ const {
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-  </head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VKSK602JN9"></script></head
+  >
+
+  <script>
+    // Google Analytics
+    // ignore tslint
+    // @ts-ignore
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      // @ts-ignore
+      dataLayer.push(arguments);
+    }
+    // @ts-ignore
+    gtag('js', new Date());
+    // @ts-ignore
+    gtag('config', 'G-VKSK602JN9');
+  </script>
   <body>
     <slot />
   </body>
@@ -68,7 +84,7 @@ const {
 
 <style is:global>
   :root {
-    --background-color: #000000;
+    --background-color: #0c0c0d;
     --text-color: #ffffff;
     --secondary-text-color: #b3b3b3;
     --font-family: 'Inter', sans-serif;

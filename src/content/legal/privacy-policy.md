@@ -1,6 +1,6 @@
 ---
 title: 'Privacy Policy for Shimmr'
-lastUpdated: '2025-03-14'
+lastUpdated: '2025-07-09' # Updated to reflect the latest changes
 ---
 
 ## We Don't Store Your Personal Data
@@ -40,11 +40,15 @@ We do not share, sell, or transmit any collected data to third parties, advertis
 
 We use Firebase Analytics to collect anonymous data. Firebase Analytics helps us understand app usage patterns and improve features. No personally identifiable information (PII) is collected through Firebase.
 
+## Crash Reporting
+
+We use Firebase Crashlytics to track and diagnose app crashes. Crash reports are collected anonymously and are not linked to any user ID or personal information. This data helps us identify and fix issues to improve app stability and performance. No personally identifiable information (PII) is included in crash reports.
+
 ## Privacy Policy Updates
 
 This Privacy Policy may be updated periodically. Any changes will be reflected on this page. We encourage users to review it from time to time.
 
 ## Contact
 
-If you have any questions regarding this Privacy Policy, feel free to contact us at:  
+If you have any questions regarding this Privacy Policy, feel free to contact us at:
 📧 hi@shimmr.app

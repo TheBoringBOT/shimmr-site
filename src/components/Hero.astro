@@ -1,176 +1,182 @@
 ---
-import download from '../assets/download.svg';
+export interface Props {
+  appUrl?: string;
+}
+
+const {
+  appUrl = 'https://apps.apple.com/us/app/binaural-beats-shimmr/id6479964631',
+} = Astro.props;
 ---
 
-<section class="hero-container">
-  <div class="blur-layer"></div>
-  <div class="hero-content">
-    <a
-      class="logo"
-      href="https://apps.apple.com/us/app/shimmr-binaural-beats-calm/id6479964631?itscg=30200&itsct=apps_box_link&mttnsubad=6479964631"
-      aria-label="Shimmr App"
-    >
-      <img
-        src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6b/8f/1c/6b8f1c49-83c8-f0c6-835f-1a5001214c54/AppIcon-0-1x_U007epad-0-1-85-220-0.jpeg/270x270bb.webp"
-        alt="Shimmr app:Binaural Beats for Better Sleep, Stress Relief & Focus"
-      />
+<section class="hero">
+  <header class="top-bar">
+    <a class="brand" href="/" aria-label="Shimmr home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-wordmark">shimmr</span>
     </a>
 
-    <div class="content">
-      <h1>Binaural Beats for Better Sleep, Stress Relief & Focus</h1>
-      <p>
-        Shimmr is a sound therapy iOS app designed to improve sleep quality, reduce stress, and
-        enhance focus through immersive binaural beats and calming soundscapes.
-      </p>
+    <a class="cta top-cta" href={appUrl}>Get the app</a>
+  </header>
 
-      <div class="download-options">
-        <a
-          href="https://apps.apple.com/us/app/shimmr-binaural-beats-calm/id6479964631?itscg=30200&itsct=apps_box_badge&mttnsubad=6479964631"
-          aria-label="Download on the App Store"
-        >
-          <img
-            src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1721865600"
-            alt="Download on the App Store"
-          />
-        </a>
-      </div>
-    </div>
+  <div class="hero-content">
+    <h1>Audio wellness, redesigned.</h1>
+    <a class="cta mobile-cta" href={appUrl}>Get the app</a>
   </div>
 </section>
 
 <style>
-  .hero-container {
-    font-family:
-      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(158deg, rgb(39 39 39), rgb(0 0 0));
-    position: fixed;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
+  .hero {
+    margin-bottom: 0;
+    padding-top: 0;
+    font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
-  .blur-layer {
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 7vh;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 2.1vh;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: #fff;
+  }
+
+  .brand-mark {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background:
+      conic-gradient(
+        from 0deg,
+        #fff 0deg 20deg,
+        transparent 20deg 38deg,
+        #fff 38deg 58deg,
+        transparent 58deg 76deg,
+        #fff 76deg 96deg,
+        transparent 96deg 114deg,
+        #fff 114deg 134deg,
+        transparent 134deg 152deg,
+        #fff 152deg 172deg,
+        transparent 172deg 190deg,
+        #fff 190deg 210deg,
+        transparent 210deg 228deg,
+        #fff 228deg 248deg,
+        transparent 248deg 266deg,
+        #fff 266deg 286deg,
+        transparent 286deg 304deg,
+        #fff 304deg 324deg,
+        transparent 324deg 342deg,
+        #fff 342deg 360deg
+      );
+    box-shadow: 0 0 28px rgba(255, 255, 255, 0.28);
+  }
+
+  .brand-mark::after {
+    content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 0;
+    inset: 7px;
+    border-radius: 999px;
+    background: #02050d;
   }
 
   .hero-content {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    z-index: 1;
-    margin: 0 auto;
-    height: min-content;
-    width: inherit;
-  }
-
-  .logo {
-    margin-bottom: 2.5rem;
-  }
-
-  .logo img {
-    width: 180px;
-    height: 180px;
-    border-radius: 36px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-
-  .logo img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
-  }
-
-  .content {
-    max-width: 650px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+    padding-top: 3vh;
   }
 
   h1 {
-    font-size: 2.5rem;
+    margin: 0;
+    max-width: 80%;
+    font-size: clamp(56px, 12vw, 130px);
+    line-height: 105%;
+    letter-spacing: -0.03em;
     font-weight: 400;
-    color: #fff;
-    margin: 0 0 1.5rem;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+    background: linear-gradient(180deg, #feffff 0%, #e6e9ef 46%, #f7f9fb 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  p {
-    font-size: 1.2rem;
-    color: var(--secondary-text-color, #b3b3b3);
-    font-weight: 300;
-    margin: 0 0 2.5rem;
-    line-height: 1.5;
-    max-width: 580px;
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(38px, 4.4vh, 48px);
+    padding: 0 clamp(14px, 1.8vh, 22px);
+    border-radius: 999px;
+    border: none;
+    font-size: clamp(15px, 1.8vh, 20px);
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    color: #060a13;
+    background: linear-gradient(180deg, #feffff 0%, #e6e9ef 46%, #f7f9fb 100%);
+    transition: filter 0.2s ease;
+    outline: none;
+    box-shadow: none;
   }
 
-  .download-options {
-    margin-top: 0.5rem;
+  .cta:hover {
+    filter: brightness(1.07);
   }
 
-  .download-options img {
-    width: 200px;
-    transition: transform 0.2s ease;
+  .cta:focus-visible {
+    outline: none;
   }
 
-  @media (max-width: 768px) {
-    .logo img {
-      width: 140px;
-      height: 140px;
-      border-radius: 28px;
+  .mobile-cta {
+    display: none;
+    margin-top: 3vh;
+  }
+
+  @media (max-width: 1000px) {
+    .hero {
+      margin-bottom: 0;
+      padding-top: 0;
+    }
+
+    .top-bar {
+      justify-content: center;
+    }
+
+    .brand {
+      gap: 9px;
+      font-size: 16px;
+    }
+
+    .brand-mark {
+      width: 18px;
+      height: 18px;
+    }
+
+    .brand-mark::after {
+      inset: 5px;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      max-width: 100%;
+      margin-top: 0;
+      font-size: clamp(40px, 11vw, 58px);
+      line-height: 105%;
     }
 
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
+    .top-cta {
+      display: none;
     }
 
-    .logo {
-      margin-bottom: 1.5rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .logo img {
-      width: 120px;
-      height: 120px;
-      border-radius: 24px;
-    }
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-
-    .download-options img {
-      width: 180px;
+    .mobile-cta {
+      display: inline-flex;
     }
   }
 </style>

@@ -1,0 +1,178 @@
+<section class="features">
+  <div class="feature-column">
+    <article class="card graph">
+      <h2 class="pad-top-md">A simple home base to track your progress.</h2>
+      <img src="https://www.offsuit.app/imgs/graph.svg" alt="Progress graph" loading="lazy" />
+    </article>
+
+    <article class="card stats margin-top-sm">
+      <h2 class="pad-top-md">See your win percentage and likely hands in-game.</h2>
+      <img src="https://www.offsuit.app/imgs/stats.png" alt="Win percentage stats" loading="lazy" />
+    </article>
+  </div>
+
+  <div class="feature-column">
+    <article class="card tournaments">
+      <h2 class="pad-top-md">Advance through dozens of tournaments.</h2>
+      <img src="https://www.offsuit.app/imgs/tournaments.png" alt="Tournament cards" loading="lazy" />
+    </article>
+
+    <article class="card preview margin-top-sm">
+      <h2 class="pad-top-md">Play against friends and intelligent AI opponents.</h2>
+      <img src="https://www.offsuit.app/imgs/ai.png" alt="AI opponents" loading="lazy" />
+    </article>
+  </div>
+</section>
+
+<style>
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column-gap: 2vh;
+    margin-top: 0;
+    margin-bottom: 16vh;
+    font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .feature-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    background:
+      radial-gradient(120% 90% at 50% -25%, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 56%),
+      linear-gradient(180deg, #090909 0%, #181818 56%, #161719 100%);
+    border-radius: 8vh;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .card:first-of-type {
+    box-shadow: 0 -24px 32px rgba(17, 17, 18, 0.4);
+  }
+
+  .card h2 {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 3.2vh;
+    line-height: 150%;
+    font-weight: 400;
+    color: #fbfbfc;
+  }
+
+  .pad-top-md {
+    padding-top: 10vh;
+  }
+
+  .margin-top-sm {
+    margin-top: 2vh;
+  }
+
+  .graph,
+  .preview {
+    height: 52vh;
+  }
+
+  .tournaments,
+  .stats {
+    height: 86vh;
+  }
+
+  .graph img {
+    position: absolute;
+    bottom: 6vw;
+    left: -2vw;
+    width: 112%;
+  }
+
+  .tournaments img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 47vh;
+  }
+
+  .stats img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 53%;
+    bottom: 12vh;
+  }
+
+  .preview img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 7.75vh;
+    width: 48vh;
+  }
+
+  @media (max-width: 1000px) {
+    .features {
+      display: block;
+      margin-top: 0;
+      margin-bottom: 18vh;
+    }
+
+    .feature-column + .feature-column {
+      margin-top: 3vh;
+    }
+
+    .card,
+    .card img {
+      height: auto;
+      position: static;
+    }
+
+    .card {
+      border-radius: 4vh;
+    }
+
+    .card h2 {
+      width: 85%;
+      padding-top: 6vh;
+      font-size: 2.8vh;
+      line-height: 142%;
+    }
+
+    .graph img {
+      height: 18vh;
+      width: auto;
+      padding-bottom: 6vh;
+    }
+
+    .stats img,
+    .tournaments img {
+      width: 32vh;
+      padding-top: 6vh;
+    }
+
+    .stats img {
+      padding-bottom: 6vh;
+    }
+
+    .preview img {
+      width: 32vh;
+      padding-top: 3vh;
+      padding-bottom: 6vh;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .features {
+      margin-bottom: 20vh;
+    }
+
+    .card h2 {
+      font-size: 2.45vh;
+      line-height: 138%;
+    }
+  }
+</style>

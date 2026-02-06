@@ -1,12 +1,79 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import BentoGrid from '../components/BentoGrid.astro';
+import FooterCta from '../components/FooterCta.astro';
+import FooterLinks from '../components/FooterLinks.astro';
 import Hero from '../components/Hero.astro';
+import HeroVideo from '../components/HeroVideo.astro';
 import Layout from '../layouts/Layout.astro';
+
+const appStoreUrl =
+  'https://apps.apple.com/us/app/binaural-beats-shimmr/id6479964631';
 ---
 
 <Layout
-  title="Shimmr App - Home"
-  description="Shimmr is a powerful app that helps you achieve your goals."
+  title="Shimmr - Landing"
+  description="Sound therapy, redesigned. Relax, focus, and sleep better with Shimmr."
 >
-  <Hero />
+  <main class="landing-page">
+    <div class="ambient-glow"></div>
+    <div class="page-shell">
+      <Hero appUrl={appStoreUrl} />
+      <HeroVideo />
+      <BentoGrid />
+      <FooterCta appUrl={appStoreUrl} />
+      <FooterLinks />
+    </div>
+  </main>
 </Layout>
+
+<style>
+  .landing-page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 50% -14%, rgba(255, 255, 255, 0.1), transparent 44%),
+      radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.03), transparent 58%), #000102;
+  }
+
+  .landing-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      circle at 50% 18%,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.6) 74%,
+      rgba(0, 0, 0, 0.78) 100%
+    );
+    z-index: 0;
+  }
+
+  .ambient-glow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 50% 8%, rgba(255, 255, 255, 0.04), transparent 36%),
+      radial-gradient(circle at 50% 56%, rgba(255, 255, 255, 0.03), transparent 58%);
+    filter: blur(20px) saturate(0.55);
+    z-index: 0;
+  }
+
+  .page-shell {
+    position: relative;
+    z-index: 1;
+    width: min(1220px, calc(100% - 56px));
+    margin: 0 auto;
+    padding: 42px 0 42px;
+  }
+
+  @media (max-width: 900px) {
+    .page-shell {
+      width: min(780px, calc(100% - 28px));
+      padding-top: 24px;
+      padding-bottom: 30px;
+    }
+  }
+</style>

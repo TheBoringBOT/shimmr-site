@@ -1,0 +1,124 @@
+---
+export interface Props {
+  videoSrc?: string;
+  imageSrc?: string;
+}
+
+const {
+  videoSrc = 'https://www.offsuit.app/imgs/small.mp4',
+  imageSrc = 'https://www.offsuit.app/imgs/hero.png',
+} = Astro.props;
+---
+
+<section class="hero-media-section">
+  <div class="hero-media">
+    <img class="hero-image" src={imageSrc} alt="Hand holding a phone" loading="eager" />
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+      <source src={videoSrc} type="video/mp4" />
+    </video>
+  </div>
+</section>
+
+<style>
+  .hero-media-section {
+    margin: 5vh auto 9vh;
+  }
+
+  .hero-media {
+    position: relative;
+    width: min(90vh, 980px, 100%);
+    aspect-ratio: 0.85 / 1;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .hero-image {
+    --fade-start: 76%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+    user-select: none;
+    pointer-events: none;
+    filter: saturate(0.72) brightness(0.84) contrast(1.08);
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) var(--fade-start),
+      rgba(0, 0, 0, 0) 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) var(--fade-start),
+      rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+  .hero-video {
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    width: 36.4%;
+    aspect-ratio: 9 / 19.5;
+    transform: translateX(-50%);
+    border-radius: clamp(18px, 3.2vh, 38px);
+    object-fit: cover;
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    z-index: 1;
+  }
+
+  @media (max-width: 1000px) {
+    .hero-media-section {
+      margin-top: 5vh;
+      margin-bottom: 12vh;
+    }
+
+    .hero-media {
+      width: min(62vh, 100%);
+      aspect-ratio: 0.85 / 1;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: saturate(0.72) brightness(0.84) contrast(1.08);
+    }
+
+    .hero-video {
+      top: 15.8%;
+      width: 36.2%;
+      border-radius: clamp(14px, 4.6vw, 24px);
+    }
+  }
+
+  @media (max-width: 780px) {
+    .hero-media-section {
+      margin-top: 5vh;
+      margin-bottom: 10vh;
+    }
+
+    .hero-image {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .hero-media-section {
+      margin-top: 5vh;
+      margin-bottom: 8vh;
+    }
+
+    .hero-video {
+      top: 15.6%;
+      width: 36.8%;
+      border-radius: clamp(14px, 5vw, 22px);
+    }
+  }
+</style>

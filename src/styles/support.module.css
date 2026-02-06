@@ -1,6 +1,6 @@
 html,
 body {
-  background-color: #0c0c0d;
+  background-color: #000;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -8,14 +8,14 @@ body {
   max-width: 980px;
   margin: 0 auto;
   padding: 0rem 2rem;
-  color: #ffffff;
+  color: #efeff1;
   min-height: 100vh;
 }
 
 .heading {
   font-size: 3.5rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #efeff1;
   margin-bottom: 2rem;
   text-align: center;
   letter-spacing: -0.02em;
@@ -24,7 +24,7 @@ body {
 .sectionHeading {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #efeff1;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   letter-spacing: -0.01em;

@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import LegalLayout from '../../../layouts/LegalLayout.astro';
+import type { LegalFrontmatter } from '../../../types/legal';
+
+const locales = ['de', 'es', 'fr', 'ja'] as const;
+type Locale = (typeof locales)[number];
+
+const updatedLabel: Record<Locale, string> = {
+  de: 'Aktualisiert',
+  es: 'Actualizado',
+  fr: 'Mis à jour',
+  ja: '更新日',
+};
+
+export async function getStaticPaths() {
+  const locales = ['de', 'es', 'fr', 'ja'];
+  const slugs = ['privacy-policy', 'terms-of-service'];
+  const entries = await getCollection('legal');
+
+  return locales.flatMap((lang) =>
+    slugs
+      .filter((slug) => entries.some((e) => e.slug === `${lang}-${slug}`))
+      .map((slug) => ({ params: { lang, slug } }))
+  );
+}
+
+const { lang, slug } = Astro.params as { lang: Locale; slug: string };
+
+const entries = await getCollection('legal');
+const entry = entries.find((e: CollectionEntry<'legal'>) => e.slug === `${lang}-${slug}`);
+
+if (!entry) {
+  return Astro.redirect('/404');
+}
+
+const { Content } = await entry.render();
+---
+
+<LegalLayout frontmatter={entry.data as LegalFrontmatter} lang={lang}>
+  <div class="legal-title-container">
+    <h1 class="legal-title">{entry.data.title}</h1>
+    <span class="legal-updated">{updatedLabel[lang]}: {entry.data.lastUpdated}</span>
+    <div class="title-underline"></div>
+  </div>
+  <Content />
+</LegalLayout>
+
+<style>
+  .legal-title-container {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .legal-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-updated {
+    font-size: 0.8rem;
+  }
+
+  .title-underline {
+    height: 1px;
+    width: 100%;
+    background-color: #cccccc;
+    margin: 2rem auto 2rem auto;
+  }
+</style>

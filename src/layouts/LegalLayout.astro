@@ -4,14 +4,16 @@ import type { LegalFrontmatter } from '../types/legal';
 
 interface Props {
   frontmatter: LegalFrontmatter;
+  lang?: string;
 }
 
-const { frontmatter } = Astro.props;
+const { frontmatter, lang } = Astro.props;
 ---
 
 <Layout
   title={frontmatter.title}
   description={frontmatter.description || `Legal document: ${frontmatter.title}`}
+  lang={lang}
 >
   <div class="legal-container">
     <slot />

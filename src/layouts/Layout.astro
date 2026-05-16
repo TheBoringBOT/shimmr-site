@@ -5,6 +5,7 @@ export interface Props {
   description?: string;
   image?: string;
   canonical?: string;
+  lang?: string;
 }
 
 const {
@@ -12,11 +13,12 @@ const {
   description = 'Shimmr is a sound therapy app that uses binaural beats and isochronic tones to help you relax, focus, and sleep better.',
   image = '/default-og-image.jpg',
   canonical = Astro.url.href,
+  lang = 'en',
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta

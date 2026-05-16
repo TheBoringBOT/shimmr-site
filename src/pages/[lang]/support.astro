@@ -1,0 +1,52 @@
+---
+import { supportTranslations, type SupportLocale } from '../../i18n/support';
+import Layout from '../../layouts/Layout.astro';
+import styles from '../../styles/support.module.css';
+
+export function getStaticPaths() {
+  return Object.keys(supportTranslations).map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: SupportLocale };
+const t = supportTranslations[lang];
+const badgeUrl = `https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/${t.appStoreBadgeLocale}?releaseDate=1721865600`;
+---
+
+<Layout title={t.pageTitle} description={t.pageDescription} lang={t.htmlLang}>
+  <div class={styles.supportContainer}>
+    <div class={styles.content}>
+      <h2 class={styles.sectionHeading}>{t.headings.customerSupport}</h2>
+      <p>{t.body.customerSupport}</p>
+
+      <h2 class={styles.sectionHeading}>{t.headings.contactUs}</h2>
+      <p>{t.body.contactUs}</p>
+      <p>
+        {t.body.contactEmail}
+        {' '}
+        <a href="mailto:hi@shimmr.app" class={styles.emailLink}>hi@shimmr.app</a>
+      </p>
+
+      <h2 class={styles.sectionHeading}>{t.headings.download}</h2>
+      <p>{t.body.download}</p>
+      <div class={styles.appStoreLink}>
+        <a
+          href="https://apps.apple.com/us/app/shimmr-meditation-sleep/id6479964631?itscg=30200&itsct=apps_box_badge&mttnsubad=6479964631"
+          aria-label={t.appStoreBadgeAlt}
+        >
+          <img src={badgeUrl} alt={t.appStoreBadgeAlt} />
+        </a>
+      </div>
+
+      <h2 class={styles.sectionHeading}>{t.headings.faq}</h2>
+      <p>{t.body.faq}</p>
+
+      <h2 class={styles.sectionHeading}>{t.headings.legal}</h2>
+      <p>{t.body.legal}</p>
+
+      <div class={styles.legalLinks}>
+        <a href="/legal/privacy-policy" class={styles.legalLink}>{t.links.privacyPolicy}</a>
+        <a href="/legal/terms-of-service" class={styles.legalLink}>{t.links.termsOfService}</a>
+      </div>
+    </div>
+  </div>
+</Layout>
